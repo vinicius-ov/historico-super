@@ -3,7 +3,7 @@ namespace Todoer.Model
 {
     public struct DatedPrice
     {
-        DateTime date;
-        Double price;
+        public DateTime Date { get; set; }
+        public Double Price { get; set; }
     }
 }

@@ -6,12 +6,15 @@ namespace Todoer
 {
     public partial class App : Application
     {
+
+        public static ProductItemManager ProductItemManager { get; set; }
+
         public App()
         {
             InitializeComponent();
 
             MainPage = new NavigationPage(new MainPage());
-
+            ProductItemManager = new ProductItemManager(new RestService());
         }
 
         protected override void OnStart()

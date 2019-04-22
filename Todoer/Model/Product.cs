@@ -3,7 +3,9 @@ namespace Todoer.Model
 {
     public struct Product
     {
-        String name;
-        DatedPrice[] prices;
+        public String Name { get; set; }
+        public DatedPrice[] Price { get; set; }
+
     }
+
 }

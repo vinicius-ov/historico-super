@@ -22,8 +22,15 @@
     <Compile Include="$(MSBuildThisFileDirectory)AssemblyInfo.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Product.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\DatedPrice.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Service\RestService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Service\IRestService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Constants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Service\ProductItemManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\ViewModel\ProductViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Model\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Service\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Model\ViewModel\" />
   </ItemGroup>
 </Project>
