@@ -26,11 +26,12 @@
     <Compile Include="$(MSBuildThisFileDirectory)Service\IRestService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Constants.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Service\ProductItemManager.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Model\ViewModel\ProductViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Project.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DatabaseInit.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Employee.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Model\" />
     <Folder Include="$(MSBuildThisFileDirectory)Service\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Model\ViewModel\" />
   </ItemGroup>
 </Project>

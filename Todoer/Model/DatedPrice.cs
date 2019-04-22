@@ -1,9 +1,15 @@
 ﻿using System;
 namespace Todoer.Model
 {
-    public struct DatedPrice
+    public class DatedPrice
     {
         public DateTime Date { get; set; }
-        public Double Price { get; set; }
+        public double Price { get; set; }
+
+        public DatedPrice(DateTime date, double price)
+        {
+            Date = date;
+            Price = price;
+        }
     }
 }

@@ -114,6 +114,11 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\plus.imageset\add%401x.png" />
+    <ImageAsset Include="Assets.xcassets\plus.imageset\add%402x.png" />
+    <ImageAsset Include="Assets.xcassets\plus.imageset\add%403x.png" />
+    <ImageAsset Include="Assets.xcassets\plus.imageset\Contents.json" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -128,7 +133,7 @@
     <PackageReference Include="Xamarin.TestCloud.Agent" Version="0.21.8" />
     <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
     <PackageReference Include="Newtonsoft.Json">
-      <Version>12.0.1</Version>
+      <Version>12.0.2</Version>
     </PackageReference>
     <PackageReference Include="System.Net.Http">
       <Version>4.3.4</Version>
@@ -136,6 +141,15 @@
     <PackageReference Include="SonarAnalyzer.CSharp">
       <Version>7.13.0.8313</Version>
     </PackageReference>
+    <PackageReference Include="sqlite-net-pcl">
+      <Version>1.5.231</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets.xcassets\plus.imageset\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\projects.sqlite" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\Todoer\Todoer.projitems" Label="Shared" />

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 using Foundation;
@@ -22,6 +23,20 @@ namespace Todoer.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+
+            // Copy the database across (if it doesn't exist)
+            //var appdir = NSBundle.MainBundle.ResourcePath;
+            //var seedFile = Path.Combine(appdir, "projects.sqlite");
+            //string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal); // Documents folder
+            //string libraryPath = Path.Combine(documentsPath, "..", "Library"); // Library folder instead
+
+            //var path = Path.Combine(libraryPath, "projects.sqlite");
+
+            //if (!File.Exists(seedFile))
+            //{
+            //    File.Copy(seedFile, path);
+            //}
+
             Xamarin.Calabash.Start();
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());

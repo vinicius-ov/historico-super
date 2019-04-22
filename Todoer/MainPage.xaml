@@ -1,26 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ContentPage Title="Produtos" xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             xmlns:local="clr-namespace:Todoer"
-             x:Class="Todoer.MainPage">
+<ContentPage Title="Produtos" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Todoer" x:Class="Todoer.MainPage">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Clicked="ShowAddProductForm"/>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.BindingContext>
+        <local:Product/>
+    </ContentPage.BindingContext>
+    
     <StackLayout Spacing="5" Margin="20">
         <!-- Place new controls here -->
-        <Label Text="Data" />        
-        <DatePicker Format="dd/MM/yyyy" x:Name="dateEntry" BindingContext="Price.Date"></DatePicker>
-        
-        <Label Text="Produto"/>
-        <Entry Placeholder="nome do produto" x:Name="productEntry" Text="{Binding Path=Name}">
-            <Entry.Keyboard>
-                <Keyboard x:FactoryMethod="Create">
-                    <x:Arguments>
-                        <KeyboardFlags>CapitalizeWord</KeyboardFlags>
-                    </x:Arguments>
-                </Keyboard>
-            </Entry.Keyboard>
-        </Entry>
-
-        <Label Text="Preco" />
-        <Entry Placeholder="preco" Keyboard="Numeric" x:Name="priceEntry" BindingContext="Price.Price"/>
-        <Button Text="SALVAR" Clicked="OnSaveProduct"/>
+        <ListView x:Name="ProductListView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="a" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackLayout x:Name="FormStack" IsVisible="false">
+            
+            <Label Text="Data"/>
+            <DatePicker Format="dd/MM/yyyy" x:Name="DateEntry" x:DataType="x:DateTime" >
+            </DatePicker>
+            
+            <Label Text="Produto" />
+            <Entry Placeholder="nome do produto" x:Name="ProductNameEntry" Text="{Binding DisplayName}">
+                <Entry.Keyboard>
+                    <Keyboard x:FactoryMethod="Create">
+                        <x:Arguments>
+                            <KeyboardFlags>CapitalizeWord</KeyboardFlags>
+                        </x:Arguments>
+                    </Keyboard>
+                </Entry.Keyboard>
+            </Entry>
+            <Label Text="Preco" x:DataType="x:Double"/>
+            <Entry Placeholder="preco" Keyboard="Numeric" x:Name="PriceEntry" />
+            <Button Text="SALVAR" Clicked="OnSaveProduct" />
+        </StackLayout>
     </StackLayout>
 </ContentPage>
