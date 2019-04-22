@@ -6,10 +6,10 @@ namespace Todoer
 {
     public interface IRestService
     {
-        Task<List<Product>> RefreshDataAsync();
+        //Task<List<Product>> RefreshDataAsync();
 
-        Task SaveTodoItemAsync(Product item, bool isNewItem);
+        //Task SaveTodoItemAsync(Product item, bool isNewItem);
 
-        Task DeleteTodoItemAsync(string id);
+        //Task DeleteTodoItemAsync(string id);
     }
 }

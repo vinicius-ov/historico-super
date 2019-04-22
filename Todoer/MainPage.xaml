@@ -5,16 +5,17 @@
         <ToolbarItem Text="Add" Clicked="ShowAddProductForm"/>
     </ContentPage.ToolbarItems>
     
-    <ContentPage.BindingContext>
-        <local:Product/>
-    </ContentPage.BindingContext>
-    
-    <StackLayout Spacing="5" Margin="20">
+    <StackLayout Spacing="5" Margin="20" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
         <!-- Place new controls here -->
-        <ListView x:Name="ProductListView">
+        <ListView x:Name="ProjectsListView" ItemsSource="{Binding Projects}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="a" />
+                    <ViewCell Height="350">
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                            <Image Source="{Binding PhotoUrl}" WidthRequest="120" HeightRequest="60" HorizontalOptions="Start"/>
+                            <Label Text="{Binding Name}" VerticalTextAlignment="Center"/>
+                        </StackLayout>
+                    </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

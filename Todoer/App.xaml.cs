@@ -14,7 +14,7 @@ namespace Todoer
             InitializeComponent();
 
             MainPage = new NavigationPage(new MainPage());
-            ProductItemManager = new ProductItemManager(new RestService());
+            //ProductItemManager = new ProductItemManager(new RestService());
         }
 
         protected override void OnStart()

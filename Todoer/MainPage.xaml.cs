@@ -18,44 +18,19 @@ namespace Todoer
     [DesignTimeVisible(true)]
     public partial class MainPage : ContentPage
     {
-        ObservableCollection<Product> products = new ObservableCollection<Product>();
-        //Product = new Product();
+        DatabaseManager DbManager = new DatabaseManager();
+        ObservableCollection<Project> Projects;
 
         public MainPage()
         {
             InitializeComponent();
-
-            ProductListView.ItemsSource = products;
+            Projects = new ObservableCollection<Project>(DbManager.FindAllProjects());
+            ProjectsListView.ItemsSource = Projects;
         }
 
         async void OnSaveProduct(object sender, EventArgs args)
         {
-            var prodName = ProductNameEntry.Text;
-            //Console.WriteLine("vai salvar");
-            var date = DateEntry.Date;
-            double price = double.Parse(PriceEntry.Text);
-            var product = new Product();
-            product.DisplayName = prodName;
-            product.Prices.Add(new DatedPrice(date, price));
-
-            //Console.WriteLine(datePrice);
-            Console.WriteLine(product);
-
-            string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal); // Documents folder
-            string libraryPath = Path.Combine(documentsPath, "..", "Library"); // Library folder instead
-
-            var path = Path.Combine(libraryPath, "projects.sqlite");
-            var db = new SQLiteConnection(path);
-            db.CreateTable<Project>();
-            db.Insert(new Project());
-            //var project = db.Get<Project>(5); // primary key id of 5
-
-            var projects = db.Table<Project>();
-            var project = db.Get<Project>(1);
-
-            int p = db.Table<Project>().Count();
-            p = p + 1;
-            //App.ProductItemManager.SaveTaskAsync();
+            Console.WriteLine("vai salvar");
         }
         async void ShowAddProductForm(object sender, EventArgs args)
         {

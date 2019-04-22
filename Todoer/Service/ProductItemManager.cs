@@ -14,15 +14,15 @@ namespace Todoer
             restService = service;
         }
 
-        public Task<List<Product>> GetTasksAsync()
-        {
-            return restService.RefreshDataAsync();
-        }
+        //public Task<List<Product>> GetTasksAsync()
+        //{
+        //    return restService.RefreshDataAsync();
+        //}
 
-        public Task SaveTaskAsync(Product item, bool isNewItem = false)
-        {
-            return restService.SaveTodoItemAsync(item, isNewItem);
-        }
+        //public Task SaveTaskAsync(Product item, bool isNewItem = false)
+        //{
+        //    return restService.SaveTodoItemAsync(item, isNewItem);
+        //}
 
         //public Task DeleteTaskAsync(Product item)
         //{
