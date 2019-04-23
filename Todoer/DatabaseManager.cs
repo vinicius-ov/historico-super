@@ -64,6 +64,15 @@ namespace Todoer
             return Database.Table<Project>().ToList();
         }
 
+        internal List<Employee> FindAllEmployees()
+        {
+            return Database.Table<Employee>().ToList();
+        }
+
+        internal int SaveProject(Project project)
+        {
+           return Database.Update(project);
+        }
         //list projects
         //list employees in given project
         //get project by id

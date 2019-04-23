@@ -28,21 +28,12 @@ namespace Todoer
             ProjectsListView.ItemsSource = Projects;
         }
 
-        async void OnSaveProduct(object sender, EventArgs args)
-        {
-            Console.WriteLine("vai salvar");
-        }
         async void OnProjectSelected(ListView sender, SelectedItemChangedEventArgs args)
         {
             Console.WriteLine(args.SelectedItem.ToString());
-
-            await Navigation.PushAsync(new ProjectDetailsPage((Project)args.SelectedItem));
+            var projectSelected = (Project)args.SelectedItem;
+            await Navigation.PushAsync(new ProjectDetailsPage(projectSelected));
 
         }
-        async void ShowAddProductForm(object sender, EventArgs args)
-        {
-            FormStack.IsVisible = !FormStack.IsVisible; //true
-        }
-
     }
 }

@@ -31,13 +31,13 @@
     <Compile Include="$(MSBuildThisFileDirectory)Model\Project.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DatabaseManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Employee.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Model\ProjectEmployee.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\ProjectDetailsPage.xaml.cs">
       <DependentUpon>ProjectDetailsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Model\ProjectEmployee.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Model\" />

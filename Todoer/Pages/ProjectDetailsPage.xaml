@@ -1,9 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage Title= "Project" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Todoer.ProjectDetailsPage"  xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
+<ContentPage Title="{Binding Name}" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Todoer.ProjectDetailsPage" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Save" Clicked="OnSaveProject"/>
+    </ContentPage.ToolbarItems>
+    
     <ContentPage.Content>
         <StackLayout Spacing="5" Margin="20" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-            <ffimageloading:CachedImage Source="{Binding PhotoUrl}" LoadingPlaceholder="placeholder.png" HeightRequest="200"/>
-            <Label Text="{Binding Name}" HorizontalOptions="CenterAndExpand"/>
+            
+            <ffimageloading:CachedImage Source="{Binding PhotoUrl}" LoadingPlaceholder="placeholder.png" ErrorPlaceholder="placeholder.png" WidthRequest="600" HeightRequest="160" />
+            
+            <ListView x:Name="WorkersListView" SelectionMode="Single" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" >
+                                <Label Text="{Binding Name}" VerticalTextAlignment="Center" HorizontalOptions="Start"/>
+                                <Label Text="{Binding Skill}" VerticalTextAlignment="Center" HorizontalOptions="End"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+            <ListView x:Name="EmployeesListView" SelectionMode="Single" ItemTapped="OnAddEmployeeToProject">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" >
+                                <Label Text="{Binding Name}" VerticalTextAlignment="Center" HorizontalOptions="Center" />
+                                <Label Text="{Binding Skill}" VerticalTextAlignment="Center" HorizontalOptions="Center"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

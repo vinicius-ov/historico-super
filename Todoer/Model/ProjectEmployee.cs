@@ -7,9 +7,9 @@ namespace Todoer.Model
     public class ProjectEmployee
     {
         [Column("id_project")]
-        public int id_project { get; set; }
+        public int IdProject { get; set; }
         [Column("id_employee")]
-        public int id_employee { get; set; }
+        public int IdEmployee { get; set; }
 
         public ProjectEmployee()
         {

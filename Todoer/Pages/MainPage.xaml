@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ContentPage Title="Projects" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Todoer" x:Class="Todoer.MainPage">
     
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add" Clicked="ShowAddProductForm"/>
-    </ContentPage.ToolbarItems>
-    
     <StackLayout Spacing="5" Margin="20" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
         <!-- Place new controls here -->
-        <ListView x:Name="ProjectsListView" ItemsSource="{Binding Projects}" SelectionMode="Single" ItemSelected="OnProjectSelected">
+        <ListView x:Name="ProjectsListView" SelectionMode="Single" ItemSelected="OnProjectSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell Height="350">
@@ -19,25 +15,5 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <StackLayout x:Name="FormStack" IsVisible="false">
-            
-            <Label Text="Data"/>
-            <DatePicker Format="dd/MM/yyyy" x:Name="DateEntry" x:DataType="x:DateTime" >
-            </DatePicker>
-            
-            <Label Text="Produto" />
-            <Entry Placeholder="nome do produto" x:Name="ProductNameEntry" Text="{Binding DisplayName}">
-                <Entry.Keyboard>
-                    <Keyboard x:FactoryMethod="Create">
-                        <x:Arguments>
-                            <KeyboardFlags>CapitalizeWord</KeyboardFlags>
-                        </x:Arguments>
-                    </Keyboard>
-                </Entry.Keyboard>
-            </Entry>
-            <Label Text="Preco" x:DataType="x:Double"/>
-            <Entry Placeholder="preco" Keyboard="Numeric" x:Name="PriceEntry" />
-            <Button Text="SALVAR" Clicked="OnSaveProduct" />
-        </StackLayout>
     </StackLayout>
 </ContentPage>
