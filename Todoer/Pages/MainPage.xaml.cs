@@ -32,6 +32,13 @@ namespace Todoer
         {
             Console.WriteLine("vai salvar");
         }
+        async void OnProjectSelected(ListView sender, SelectedItemChangedEventArgs args)
+        {
+            Console.WriteLine(args.SelectedItem.ToString());
+
+            await Navigation.PushAsync(new ProjectDetailsPage((Project)args.SelectedItem));
+
+        }
         async void ShowAddProductForm(object sender, EventArgs args)
         {
             FormStack.IsVisible = !FormStack.IsVisible; //true

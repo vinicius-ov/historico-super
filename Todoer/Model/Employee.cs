@@ -21,5 +21,9 @@ namespace Todoer.Model
         {
 
         }
+        public override string ToString()
+        {
+            return "Project: " + Name + " " + Skill;
+        }
     }
 }

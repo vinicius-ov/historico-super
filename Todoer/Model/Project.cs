@@ -6,6 +6,11 @@ namespace Todoer.Model
     [Table("projects")]
     public class Project
     {
+        [PrimaryKey, AutoIncrement, Column("id")]
+        public int Id { get; set; }
+        public string PhotoUrl { get; set; }
+        public string Name { get; set; }
+
         public Project()
         {
 
@@ -17,9 +22,9 @@ namespace Todoer.Model
             PhotoUrl = photoUrl;
         }
 
-        public string PhotoUrl { get; set; }
-        public string Name { get; set; }
-        [PrimaryKey, AutoIncrement, Column("id")]
-        public int Id { get; set; }
+        public override string ToString()
+        {
+            return "Project: " + Name + " " + PhotoUrl;
+        }
     }
 }
