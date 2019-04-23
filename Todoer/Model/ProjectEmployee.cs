@@ -1,14 +1,15 @@
 ﻿using System;
 using SQLite;
+using SQLiteNetExtensions.Attributes;
 
 namespace Todoer.Model
 {
     [Table("projects_employees")]
     public class ProjectEmployee
     {
-        [Column("id_project")]
+        [ForeignKey(typeof(Project))]
         public int IdProject { get; set; }
-        [Column("id_employee")]
+        [ForeignKey(typeof(Employee))]
         public int IdEmployee { get; set; }
 
         public ProjectEmployee()

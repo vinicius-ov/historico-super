@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using SQLite;
+using SQLiteNetExtensions.Attributes;
 
 namespace Todoer.Model
 {
@@ -9,10 +9,23 @@ namespace Todoer.Model
     {
         [PrimaryKey, AutoIncrement, Column("id")]
         public int Id { get; set; }
-        public string PhotoUrl { get; set; }
+        private string photoUrl = string.Empty;
+        public string PhotoUrl
+        {
+            get
+            {
+                if (photoUrl.Length <= 0)
+                {
+                    return "https://www.hagana.com.br/wp-content/uploads/2015/09/default-no-image.png";
+                }
+                return photoUrl;
+            }
+            set => photoUrl = value;
+        }
         public string Name { get; set; }
+
         [ManyToMany(typeof(ProjectEmployee))]
-        public List<Employee> Workers;
+        public List<Employee> Workers { get; set; }
 
         public Project()
         {

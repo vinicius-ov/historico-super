@@ -6,30 +6,34 @@
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
-        <StackLayout Spacing="5" Margin="20" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             
-            <ffimageloading:CachedImage Source="{Binding PhotoUrl}" LoadingPlaceholder="placeholder.png" ErrorPlaceholder="placeholder.png" WidthRequest="600" HeightRequest="160" />
+            <ffimageloading:CachedImage Source="{Binding PhotoUrl}" LoadingPlaceholder="placeholder.png" ErrorPlaceholder="placeholder.png" HeightRequest="260" />
+            
+            <Label Text="Employees in this project" HorizontalOptions="CenterAndExpand" Margin="10"/>
             
             <ListView x:Name="WorkersListView" SelectionMode="Single" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Orientation="Horizontal" >
-                                <Label Text="{Binding Name}" VerticalTextAlignment="Center" HorizontalOptions="Start"/>
-                                <Label Text="{Binding Skill}" VerticalTextAlignment="Center" HorizontalOptions="End"/>
+                            <StackLayout Orientation="Horizontal" Margin="10">
+                                <Label Text="{Binding Name}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand"/>
+                                <Label Text="{Binding Skill}" VerticalTextAlignment="Center" HorizontalOptions="EndAndExpand"/>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
             
+            <Label Text="Employees available" HorizontalOptions="CenterAndExpand" Margin="10"/>
+           
             <ListView x:Name="EmployeesListView" SelectionMode="Single" ItemTapped="OnAddEmployeeToProject">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Orientation="Horizontal" >
-                                <Label Text="{Binding Name}" VerticalTextAlignment="Center" HorizontalOptions="Center" />
-                                <Label Text="{Binding Skill}" VerticalTextAlignment="Center" HorizontalOptions="Center"/>
+                            <StackLayout Orientation="Horizontal" Margin="10">
+                                <Label Text="{Binding Name}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" />
+                                <Label Text="{Binding Skill}" VerticalTextAlignment="Center" HorizontalOptions="EndAndExpand"/>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

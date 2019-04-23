@@ -24,16 +24,16 @@ namespace Todoer
         public MainPage()
         {
             InitializeComponent();
+            this.BackgroundColor = Color.Navy;
             Projects = new ObservableCollection<Project>(DbManager.FindAllProjects());
             ProjectsListView.ItemsSource = Projects;
         }
 
-        async void OnProjectSelected(ListView sender, SelectedItemChangedEventArgs args)
+    async void OnProjectSelected(ListView sender, SelectedItemChangedEventArgs args)
         {
             Console.WriteLine(args.SelectedItem.ToString());
             var projectSelected = (Project)args.SelectedItem;
             await Navigation.PushAsync(new ProjectDetailsPage(projectSelected));
-
         }
     }
 }

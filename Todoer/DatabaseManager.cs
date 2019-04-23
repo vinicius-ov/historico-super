@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using SQLite;
 using Todoer.Model;
+using System.Linq;
+using SQLiteNetExtensions.Extensions;
 
 namespace Todoer
 {
@@ -59,9 +61,14 @@ namespace Todoer
             }
         }
 
+        internal Project GetProjectWorkers(int id)
+        {
+            return Database.GetWithChildren<Project>(id);
+        }
+
         internal List<Project> FindAllProjects()
         {
-            return Database.Table<Project>().ToList();
+            return Database.GetAllWithChildren<Project>(); 
         }
 
         internal List<Employee> FindAllEmployees()
@@ -71,7 +78,8 @@ namespace Todoer
 
         internal int SaveProject(Project project)
         {
-           return Database.Update(project);
+            Database.UpdateWithChildren(project);
+            return 1;
         }
         //list projects
         //list employees in given project

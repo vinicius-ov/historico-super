@@ -17,10 +17,9 @@ namespace Todoer
         {
             InitializeComponent();
             Project = project;
-            if (Project.Workers == null)
-            {
-                Project.Workers = new List<Employee>();
-            }
+
+            Project.Workers = DbManager.GetProjectWorkers(Project.Id).Workers;
+
             BindingContext = Project;
             Workers = new ObservableCollection<Employee>(Project.Workers);
             WorkersListView.ItemsSource = Workers;
@@ -38,6 +37,7 @@ namespace Todoer
         {
             Project savingProject = Project;
             savingProject.Workers = new List<Employee>(Workers);
+            Project = savingProject;
             DbManager.SaveProject(savingProject);
         }
     }
