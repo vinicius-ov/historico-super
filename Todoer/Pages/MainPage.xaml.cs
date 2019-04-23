@@ -23,8 +23,8 @@ namespace Todoer
 
         public MainPage()
         {
-            InitializeComponent();
             this.BackgroundColor = Color.Navy;
+            InitializeComponent();
             Projects = new ObservableCollection<Project>(DbManager.FindAllProjects());
             ProjectsListView.ItemsSource = Projects;
         }

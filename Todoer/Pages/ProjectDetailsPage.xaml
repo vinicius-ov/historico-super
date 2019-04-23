@@ -6,18 +6,18 @@
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
-        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <StackLayout >
             
             <ffimageloading:CachedImage Source="{Binding PhotoUrl}" LoadingPlaceholder="placeholder.png" ErrorPlaceholder="placeholder.png" HeightRequest="260" />
             
             <Label Text="Employees in this project" HorizontalOptions="CenterAndExpand" Margin="10"/>
             
-            <ListView x:Name="WorkersListView" SelectionMode="Single" >
+            <ListView x:Name="WorkersListView" SelectionMode="Single" RowHeight="50" Margin="10">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Orientation="Horizontal" Margin="10">
-                                <Label Text="{Binding Name}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand"/>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Name}" LineBreakMode="MiddleTruncation" VerticalTextAlignment="Center" HorizontalOptions="Start"/>
                                 <Label Text="{Binding Skill}" VerticalTextAlignment="Center" HorizontalOptions="EndAndExpand"/>
                             </StackLayout>
                         </ViewCell>
@@ -27,11 +27,11 @@
             
             <Label Text="Employees available" HorizontalOptions="CenterAndExpand" Margin="10"/>
            
-            <ListView x:Name="EmployeesListView" SelectionMode="Single" ItemTapped="OnAddEmployeeToProject">
+            <ListView x:Name="EmployeesListView" SelectionMode="Single" ItemTapped="OnAddEmployeeToProject" RowHeight="50" Margin="10">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Orientation="Horizontal" Margin="10">
+                            <StackLayout Orientation="Horizontal">
                                 <Label Text="{Binding Name}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" />
                                 <Label Text="{Binding Skill}" VerticalTextAlignment="Center" HorizontalOptions="EndAndExpand"/>
                             </StackLayout>
