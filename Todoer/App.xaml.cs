@@ -9,8 +9,11 @@ namespace Todoer
         public App()
         {
             InitializeComponent();
-            MainPage = new NavigationPage(new MainPage());
-            MainPage.BackgroundColor = Color.Navy;
+            MainPage = new NavigationPage(new MainPage())
+            {
+                BarBackgroundColor = Color.FromHex("#202020"),
+                BarTextColor = Color.White
+            };
         }
 
         protected override void OnStart()

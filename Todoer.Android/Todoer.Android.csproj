@@ -70,19 +70,19 @@
       <Version>7.13.0.8313</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.FFImageLoading.Transformations">
-      <Version>2.4.4.859</Version>
+      <Version>2.4.5.909-pre</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.FFImageLoading.Svg">
-      <Version>2.4.4.859</Version>
+      <Version>2.4.5.909-pre</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.FFImageLoading.Svg.Forms">
-      <Version>2.4.4.859</Version>
+      <Version>2.4.5.909-pre</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.FFImageLoading">
-      <Version>2.4.4.859</Version>
+      <Version>2.4.5.909-pre</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.FFImageLoading.Forms">
-      <Version>2.4.4.859</Version>
+      <Version>2.4.5.909-pre</Version>
     </PackageReference>
     <PackageReference Include="SQLiteNetExtensions">
       <Version>2.1.0</Version>
@@ -115,6 +115,10 @@
     <AndroidResource Include="Resources\mipmap-xxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\placeholder.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\placeholder.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\placeholder.png" />
+    <AndroidResource Include="Resources\mipmap-anydpi-v26\placeholder.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

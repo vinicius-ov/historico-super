@@ -2,7 +2,7 @@
 <ContentPage BackgroundColor="#202020" Title="{Binding Name}" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Todoer.ProjectDetailsPage" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
     <ContentPage.Content>
         <StackLayout VerticalOptions="FillAndExpand">
-            <ffimageloading:CachedImage Source="{Binding PhotoUrl}" LoadingPlaceholder="placeholder.png" ErrorPlaceholder="placeholder.png" HeightRequest="220" />
+            <ffimageloading:CachedImage Source="{Binding PhotoUrl}" LoadingPlaceholder="placeholder.png" HeightRequest="220" />
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="0.2*" />

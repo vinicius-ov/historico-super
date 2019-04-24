@@ -18,7 +18,7 @@ namespace Todoer.Model
             {
                 if (photoUrl.Length <= 0)
                 {
-                    return "https://www.hagana.com.br/wp-content/uploads/2015/09/default-no-image.png";
+                    return "https://www.kdeblog.com/wp-content/themes/gonzo/images/no-image-featured-image.png";
                 }
                 return photoUrl;
             }

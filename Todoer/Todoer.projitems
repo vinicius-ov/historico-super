@@ -24,12 +24,8 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)AssemblyInfo.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Service\RestService.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Service\IRestService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Constants.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Service\ProductItemManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Project.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)DatabaseManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Employee.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\ProjectDetailsPage.xaml.cs">
       <DependentUpon>ProjectDetailsPage.xaml</DependentUpon>
@@ -38,7 +34,7 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Model\ProjectEmployee.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Model\Product.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Service\DatabaseManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Model\" />
