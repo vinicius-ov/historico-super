@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using Java.Lang;
 using Todoer.Model;
 using Xamarin.Forms;
 
@@ -31,8 +32,17 @@ namespace Todoer
         {
             var employeeSelected = (Employee) args.Item;
             Workers.Add(employeeSelected);
-            Project.addWorker(employeeSelected);
+            Project.AddWorker(employeeSelected);
             Employees.Remove(employeeSelected);
+            WorkersListView.ScrollTo(employeeSelected, ScrollToPosition.MakeVisible,true);
+        }
+        public void OnRemoveEmployeeFromProject(ListView sender, ItemTappedEventArgs args)
+        {
+            var employeeSelected = (Employee)args.Item;
+            Workers.Remove(employeeSelected);
+            Project.RemoveWorker(employeeSelected);
+            Employees.Add(employeeSelected);
+            EmployeesListView.ScrollTo(employeeSelected, ScrollToPosition.MakeVisible, true);
         }
 
         protected override void OnDisappearing()

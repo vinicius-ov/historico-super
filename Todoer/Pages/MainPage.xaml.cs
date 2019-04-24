@@ -28,10 +28,9 @@ namespace Todoer
             ProjectsListView.ItemsSource = Projects;
         }
 
-    async void OnProjectSelected(ListView sender, SelectedItemChangedEventArgs args)
+        async void OnProjectSelected(ListView sender, ItemTappedEventArgs args)
         {
-            Console.WriteLine(args.SelectedItem.ToString());
-            var projectSelected = (Project)args.SelectedItem;
+            var projectSelected = (Project)args.Item;
             await Navigation.PushAsync(new ProjectDetailsPage(projectSelected));
         }
     }

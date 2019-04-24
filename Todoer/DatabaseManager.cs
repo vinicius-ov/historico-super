@@ -16,9 +16,16 @@ namespace Todoer
         {
             string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal); // Documents folder
             string libraryPath = Path.Combine(documentsPath, "..", "Library"); // Library folder instead
-
-            var path = Path.Combine(libraryPath, "projects.sqlite");
-            Database = new SQLiteConnection(path);
+            string dbName = "projects.sqlite";
+            var path = Path.Combine(libraryPath, dbName);
+            try{
+                Database = new SQLiteConnection(path);
+            }
+            catch (SQLiteException e)
+            {
+                path = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), dbName);
+                Database = new SQLiteConnection(path);
+            }
             Database.CreateTable<Project>();
             Database.CreateTable<Employee>();
             Database.CreateTable<ProjectEmployee>();

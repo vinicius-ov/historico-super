@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using SQLite;
 using SQLiteNetExtensions.Attributes;
@@ -61,7 +62,13 @@ namespace Todoer.Model
             Workers = new List<Employee>();
         }
 
-        public void addWorker(Employee employee)
+        internal void RemoveWorker(Employee employeeSelected)
+        {
+            this.Workers.Remove(employeeSelected);
+            OnPropertyChanged(nameof(Workers));
+        }
+
+        public void AddWorker(Employee employee)
         {
             this.Workers.Add(employee);
             OnPropertyChanged(nameof(Workers));

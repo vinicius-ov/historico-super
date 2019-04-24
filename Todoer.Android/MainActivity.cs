@@ -14,6 +14,8 @@ namespace Todoer.Droid
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            FFImageLoading.Forms.Platform.CachedImageRenderer.Init(enableFastRenderer: true);
+
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
@@ -22,7 +24,6 @@ namespace Todoer.Droid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
-            FFImageLoading.Forms.Platform.CachedImageRenderer.Init(enableFastRenderer: true);
 
             LoadApplication(new App());
         }

@@ -28,6 +28,7 @@ namespace Todoer.iOS
 
             UIColor tintColor = UIColor.FromRGB(31,31,31);
             UINavigationBar.Appearance.BarTintColor = tintColor;
+            UINavigationBar.Appearance.TintColor = UIColor.White;
             UINavigationBar.Appearance.TitleTextAttributes = new UIStringAttributes() { ForegroundColor = UIColor.White };
             UINavigationBar.Appearance.Translucent = true;
 

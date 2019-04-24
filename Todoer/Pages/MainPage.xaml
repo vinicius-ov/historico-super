@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ContentPage Title="Projects" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Todoer" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" x:Class="Todoer.MainPage">
+<ContentPage Title="Projects" BackgroundColor="#202020" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Todoer" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" x:Class="Todoer.MainPage">
     <StackLayout>
-        <ListView x:Name="ProjectsListView" SelectionMode="Single" ItemSelected="OnProjectSelected" RowHeight="300" >
+        <ListView x:Name="ProjectsListView" SelectionMode="None" ItemTapped="OnProjectSelected" RowHeight="300" Margin="5" BackgroundColor="#202020">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout Orientation="Vertical" BackgroundColor="#202020" Padding="0, 20, 15, 5">
+                        <StackLayout Orientation="Vertical" BackgroundColor="#202020" Padding="5,20">
                             <ffimageloading:CachedImage Source="{Binding PhotoUrl}" LoadingPlaceholder="placeholder.png" WidthRequest="500" HeightRequest="200" HorizontalOptions="CenterAndExpand" />
                             <Label Text="{Binding Name}" TextColor="White" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" FontSize="Large" FontFamily="Verdana"/>
                             <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
