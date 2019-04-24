@@ -119,6 +119,9 @@
     <AndroidResource Include="Resources\mipmap-mdpi\placeholder.png" />
     <AndroidResource Include="Resources\mipmap-xhdpi\placeholder.png" />
     <AndroidResource Include="Resources\mipmap-anydpi-v26\placeholder.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\placeholder.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\placeholder.png" />
+    <AndroidResource Include="Resources\drawable\placeholder.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
