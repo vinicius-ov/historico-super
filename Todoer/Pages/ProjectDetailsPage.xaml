@@ -2,7 +2,7 @@
 <ContentPage BackgroundColor="#202020" Title="{Binding Name}" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Todoer.ProjectDetailsPage" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
     <ContentPage.Content>
         <StackLayout VerticalOptions="FillAndExpand">
-            <ffimageloading:CachedImage Source="{Binding PhotoUrl}" LoadingPlaceholder="placeholder.png" ErrorPlaceholder="placeholder.png" HeightRequest="260" />
+            <ffimageloading:CachedImage Source="{Binding PhotoUrl}" LoadingPlaceholder="placeholder.png" ErrorPlaceholder="placeholder.png" HeightRequest="220" />
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1*" />
@@ -11,7 +11,7 @@
                     <RowDefinition Height="4*" />
                 </Grid.RowDefinitions>
                 <Label TextColor="White" Grid.Row="0" Text="Employees in this project" HorizontalOptions="CenterAndExpand" />
-                <ListView Grid.Row="1" x:Name="WorkersListView" SelectionMode="Single" RowHeight="80" BackgroundColor="#202020">
+                <ListView Grid.Row="1" x:Name="WorkersListView" SelectionMode="Single" RowHeight="60" BackgroundColor="#202020">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -24,7 +24,7 @@
                     </ListView.ItemTemplate>
                 </ListView>
                 <Label TextColor="White" Grid.Row="2" Text="Employees available" HorizontalOptions="CenterAndExpand" />
-                <ListView Grid.Row="3" x:Name="EmployeesListView" SelectionMode="Single" ItemTapped="OnAddEmployeeToProject" RowHeight="80" BackgroundColor="#404040">
+                <ListView Grid.Row="3" x:Name="EmployeesListView" SelectionMode="Single" ItemTapped="OnAddEmployeeToProject" RowHeight="60" BackgroundColor="#404040">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
