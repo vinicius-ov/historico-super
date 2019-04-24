@@ -81,6 +81,11 @@ namespace Todoer
             Database.UpdateWithChildren(project);
             return 1;
         }
+
+        internal List<Employee> FindVacantEmployees()
+        {
+            return Database.Query<Employee>("select * from employees where employees.id not in (select IdEmployee from projects_employees where IdEmployee = employees.id)");
+        }
         //list projects
         //list employees in given project
         //get project by id

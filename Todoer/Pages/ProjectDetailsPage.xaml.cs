@@ -23,21 +23,21 @@ namespace Todoer
             BindingContext = Project;
             Workers = new ObservableCollection<Employee>(Project.Workers);
             WorkersListView.ItemsSource = Workers;
-            Employees = new ObservableCollection<Employee>(DbManager.FindAllEmployees());
+            Employees = new ObservableCollection<Employee>(DbManager.FindVacantEmployees());
             EmployeesListView.ItemsSource = Employees;
-
+            
         }
         public void OnAddEmployeeToProject(ListView sender, ItemTappedEventArgs args)
         {
             var employeeSelected = (Employee) args.Item;
             Workers.Add(employeeSelected);
+            Project.addWorker(employeeSelected);
             Employees.Remove(employeeSelected);
         }
-        public void OnSaveProject(object sender, EventArgs args)
+
+        protected override void OnDisappearing()
         {
             Project savingProject = Project;
-            savingProject.Workers = new List<Employee>(Workers);
-            Project = savingProject;
             DbManager.SaveProject(savingProject);
         }
     }

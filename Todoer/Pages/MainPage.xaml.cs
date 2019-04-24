@@ -23,10 +23,12 @@ namespace Todoer
 
         public MainPage()
         {
-            this.BackgroundColor = Color.Navy;
             InitializeComponent();
             Projects = new ObservableCollection<Project>(DbManager.FindAllProjects());
             ProjectsListView.ItemsSource = Projects;
+
+            var lista = DbManager.FindVacantEmployees();
+            int p = lista.Count;
         }
 
     async void OnProjectSelected(ListView sender, SelectedItemChangedEventArgs args)

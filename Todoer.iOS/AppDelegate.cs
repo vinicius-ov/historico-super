@@ -26,6 +26,11 @@ namespace Todoer.iOS
 
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init();
 
+            UIColor tintColor = UIColor.FromRGB(31,31,31);
+            UINavigationBar.Appearance.BarTintColor = tintColor;
+            UINavigationBar.Appearance.TitleTextAttributes = new UIStringAttributes() { ForegroundColor = UIColor.White };
+            UINavigationBar.Appearance.Translucent = true;
+
             Xamarin.Calabash.Start();
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());

@@ -22,7 +22,7 @@ namespace Todoer
             }
         }
 
-        public List<DatedPrice> Prices { get; set; }
+        //public List<DatedPrice> Prices { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -31,10 +31,10 @@ namespace Todoer
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
 
-        public Product()
-        {
-            Prices = new List<DatedPrice>();
-        }
+        //public Product()
+        //{
+        //    Prices = new List<DatedPrice>();
+        //}
 
     }
 

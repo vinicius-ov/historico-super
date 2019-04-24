@@ -5,7 +5,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout Orientation="Vertical" BackgroundColor="Navy" Padding="0, 20, 15, 5">
+                        <StackLayout Orientation="Vertical" BackgroundColor="#202020" Padding="0, 20, 15, 5">
                             <ffimageloading:CachedImage Source="{Binding PhotoUrl}" LoadingPlaceholder="placeholder.png" WidthRequest="500" HeightRequest="200" HorizontalOptions="CenterAndExpand" />
                             <Label Text="{Binding Name}" TextColor="White" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" FontSize="Large" FontFamily="Verdana"/>
                             <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
